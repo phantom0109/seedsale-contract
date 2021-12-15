@@ -56,11 +56,6 @@ contract Seedsale is Ownable {
         claimedTokens[msg.sender] = claimedTokens[msg.sender] + claimable;
     }
 
-    function withdrawETH() external onlyOwner {
-        uint256 ethAmount = address(this).balance;
-        payable(msg.sender).transfer(ethAmount);
-    }
-
     function setPrice(uint256 _price) external onlyOwner {
         price = _price;
     }
@@ -75,9 +70,10 @@ contract Seedsale is Ownable {
         kataToken = IERC20(_kata);
     }
 
-    function registerMember(address[] memory addrs, uint256[] memory amount) external onlyOwner {
+    function registerMember(address[] memory addrs, uint256[] memory amounts) external onlyOwner {
+        require(addrs.length == amounts.length, "Two array have different lengths");
         for (uint256 i = 0; i < addrs.length; i++){
-            buyTokens[addrs[i]] = buyTokens[addrs[i]] + amount[i];
+            buyTokens[addrs[i]] = buyTokens[addrs[i]] + amounts[i];
     }
   }
 }
