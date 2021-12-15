@@ -1,0 +1,17 @@
+{
+  "name": "katanainu-seedsale-contract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "phantom0109 <p.phantom0109@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.0",
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "dotenv": "^10.0.0",
+    "truffle-plugin-verify": "^0.5.18"
+  },
+  "scripts": {
+    "deploy:kovan": "truffle migrate --network kovan --reset",
+    "verify:kovan": "truffle run verify Seedsale TestKata --network kovan"
+  }
+}
