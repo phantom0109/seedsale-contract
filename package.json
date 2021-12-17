@@ -12,6 +12,8 @@
   },
   "scripts": {
     "deploy:kovan": "truffle migrate --network kovan --reset",
-    "verify:kovan": "truffle run verify Seedsale TestKata --network kovan"
+    "verify:kovan": "truffle run verify Seedsale --network kovan",
+    "deploy:mainnet": "truffle migrate --network mainnet --reset",
+    "verify:mainnet": "truffle run verify Seedsale --network mainnet"
   }
 }
